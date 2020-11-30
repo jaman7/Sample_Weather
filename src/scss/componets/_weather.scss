@@ -1,0 +1,256 @@
+.box-title {
+	& span,
+	& h2,
+	& h3,
+	& h4 {
+		color: $colorWhite;
+		@extend %textshadownocolor;
+	}
+
+	& h2 {
+		@include fluid-type(28px, 37px);
+	}
+
+	& h4 {
+		@include fluid-type(20px, 24px);
+	}
+}
+
+.round {
+	border-radius: 10px;
+	background-color: rgba($bg-white, 0.2);
+}
+
+.box1 {
+	display: flex;
+	align-items: center;
+
+	justify-content: space-around;
+
+	& svg {
+		color: $colorWhite;
+		display: block;
+	}
+
+	& h3,
+	& h4 {
+		color: $colorWhite;
+		@extend %textshadownocolor;
+	}
+
+	& h3 {
+		@include fluid-type(50px, 70px);
+	}
+
+	& h4 {
+		@include fluid-type(20px, 24px);
+	}
+
+	&__image {
+		display: flex;
+		align-items: center;
+		font-size: 100px;
+		justify-content: flex-end;
+	}
+
+	@include mediaa(maxsm) {
+		margin-top: 30px;
+	}
+}
+
+.box2 {
+	display: flex;
+	flex-wrap: wrap;
+	align-self: flex-start;
+	flex-basis: 100%;
+
+	@include mediaa(minsm) {
+		flex-basis: 50%;
+	}
+
+	@include mediaa(maxsm) {
+		margin-top: 30px;
+	}
+
+	& .item {
+		display: flex;
+		flex-basis: calc(33.3333%);
+		flex-direction: column;
+		padding: 10px;
+		justify-content: center;
+		align-items: center;
+		color: $colorWhite;
+	}
+
+	& h4,
+	& span {
+		@extend %textshadownocolor;
+	}
+}
+
+.box3 {
+	display: flex;
+	flex-basis: 100%;
+	// flex-direction: row;
+	padding-bottom: 20px;
+
+	@include mediaa(maxsm) {
+		flex-direction: initial;
+		flex-basis: initial;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	& .item {
+		color: $colorWhite;
+		flex-shrink: 0;
+		flex-basis: 90px;
+		padding: 10px;
+		margin: 0 5px;
+		border-radius: 5px;
+		background-color: rgba($colorWhite, 0.2);
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		text-align: center;
+
+		@include mediaa(minmd) {
+			flex-basis: 110px;
+		}
+
+		@include mediaa(maxsm) {
+			margin-left: 0;
+			margin-right: 5px;
+			margin-top: 5px;
+		}
+
+		&:first-child {
+			margin-left: 0;
+		}
+
+		&-column {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+
+		& h4 {
+			text-align: center;
+		}
+
+		& h4,
+		& span {
+			@extend %textshadownocolor;
+		}
+	}
+}
+
+.box4 {
+	display: flex;
+	flex-basis: 50%;
+	padding-bottom: 20px;
+
+	@include mediaa(maxmlg) {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	@include mediaa(maxsm) {
+		flex-direction: initial;
+		flex-basis: initial;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	& .item {
+		display: flex;
+		flex-direction: column;
+		//justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		align-self: stretch;
+		justify-content: space-between;
+		color: $colorWhite;
+		padding: 10px;
+		@include margin(8px 8px null null);
+		border-radius: 5px;
+		background-color: rgba($colorWhite, 0.2);
+		text-align: center;
+
+		@include mediaa(minmlg) {
+			flex-basis: 100%;
+		}
+
+		@include mediaa(maxmlg) {
+			flex-basis: 200px;
+			margin-top: 8px;
+			margin-right: 8px;
+			margin-left: 0;
+		}
+
+		@include mediaa(maxmd) {
+			flex-basis: 25%;
+		}
+
+		@include mediaa(maxsm) {
+			flex-basis: 45%;
+			margin-left: 0;
+			margin-right: 5px;
+			margin-top: 5px;
+		}
+
+		@include mediaa(maxxsm) {
+			flex-basis: 100%;
+		}
+
+		&:first-child {
+			margin-left: 0;
+		}
+
+		&-column {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+
+		& h4 {
+			text-align: center;
+		}
+
+		& .temp {
+			text-align: center;
+			@include fluid-type(1.1rem, 1.3rem);
+
+			& span {
+				@include fluid-type(0.8rem, 1rem);
+				font-weight: 400;
+			}
+		}
+
+		.description {
+			@include fluid-type(1rem, 1.1rem);
+			font-weight: 400;
+			@include padding(15px null);
+			margin-bottom: 0;
+		}
+
+		& h4,
+		& span {
+			@extend %textshadownocolor;
+		}
+	}
+
+	& p,
+	& h4,
+	& span {
+		color: $colorWhite;
+		@extend %textshadownocolor;
+	}
+}
+
+.scroll-container {
+	display: flex;
+}

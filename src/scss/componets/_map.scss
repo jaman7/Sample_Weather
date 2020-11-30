@@ -1,0 +1,44 @@
+.mapbox-react {
+	// & .nav {
+	// 	justify-content: flex-end;
+	// }
+}
+
+.mapboxgl-control-container {
+	position: relative;
+	z-index: 10;
+	width: 100%;
+	height: auto;
+	display: block;
+
+	& .mapboxgl-ctrl-top-left {
+		pointer-events: initial !important;
+		z-index: 11;
+		height: auto;
+	}
+
+	& .mapboxgl-ctrl {
+		float: none;
+		display: flex;
+		width: fit-content;
+		height: auto;
+	}
+
+	// & .mapboxgl-ctrl-geocoder--input {
+	// 	outline: 0 !important;
+	// 	border: 1px solid transparent;
+	// 	border-bottom-color: #fffafa;
+	// 	border-radius: 0;
+	// 	background: none;
+	// 	background-color: transparent !important;
+	// 	background-position: center bottom, center calc(100% - 1px);
+	// 	background-size: 0 2px, 100% 1px;
+	// 	background-repeat: no-repeat;
+	// 	box-shadow: none;
+	// 	transition: all 0s ease-out;
+	// }
+}
+
+.mapboxgl-ctrl-geocoder .suggestions {
+	height: unset;
+}
