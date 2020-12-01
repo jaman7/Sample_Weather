@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { inject, observer } from 'mobx-react';
@@ -13,7 +12,6 @@ import {
 	faSmog
 } from '@fortawesome/free-solid-svg-icons';
 import uuid from 'react-uuid';
-// import ScrollContainer from 'react-indiana-drag-scroll';
 
 import Forecast from './Forecast';
 import Daily from './Daily';
