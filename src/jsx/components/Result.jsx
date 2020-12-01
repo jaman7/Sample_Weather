@@ -30,9 +30,11 @@ const Result = inject('WeatherStore')(
 		const { WeatherStore } = props;
 
 		const {
+			id,
 			city,
 			country,
 			date,
+			icon,
 			description,
 			main,
 			temp,
@@ -45,24 +47,6 @@ const Result = inject('WeatherStore')(
 			forecast,
 			daily
 		} = WeatherStore.WeatherData;
-
-		let weatherIcon = '';
-
-		if (main === 'Thunderstorm') {
-			weatherIcon = <FontAwesomeIcon icon={faBolt} />;
-		} else if (main === 'Drizzle') {
-			weatherIcon = <FontAwesomeIcon icon={faCloudRain} />;
-		} else if (main === 'Rain') {
-			weatherIcon = <FontAwesomeIcon icon={faCloudShowersHeavy} />;
-		} else if (main === 'Snow') {
-			weatherIcon = <FontAwesomeIcon icon={faSnowflake} />;
-		} else if (main === 'Clear') {
-			weatherIcon = <FontAwesomeIcon icon={faSun} />;
-		} else if (main === 'Clouds') {
-			weatherIcon = <FontAwesomeIcon icon={faCloud} />;
-		} else {
-			weatherIcon = <FontAwesomeIcon icon={faSmog} />;
-		}
 
 		const box2Str = ['Hight', 'Wind', 'Sunrise', 'Low', 'Rain', 'Sunset'];
 		const box2Param = [
@@ -92,9 +76,11 @@ const Result = inject('WeatherStore')(
 						</H2>
 						<H4>{date}</H4>
 					</Column>
-					<Column nameClass="col-12 col-md-6">
+					<Column nameClass="col-12 col-md-6 box-current">
 						<Wrapper nameClass="box1">
-							<Wrapper nameClass="box1__image">{weatherIcon}</Wrapper>
+							<Wrapper nameClass="box1__image">
+								<i className={`icon wi wi-owm-${id}`} />
+							</Wrapper>
 							<Wrapper nameClass="box1__heading">
 								<H3>{Math.floor(temp)}&#176;</H3>
 								<H4>{description}</H4>
@@ -170,7 +156,12 @@ const Result = inject('WeatherStore')(
 );
 
 Result.wrappedComponent.propTypes = {
+	icon: PropTypes.string,
 	WeatherStore: PropTypes.objectOf(PropTypes.object).isRequired
+};
+
+Result.wrappedComponent.defaultProps = {
+	icon: '04n'
 };
 
 export default Result;

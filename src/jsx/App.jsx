@@ -18,7 +18,7 @@ class App extends Component {
 	render() {
 		const { WeatherStore } = this.props;
 
-		// console.log(toJS(WeatherStore.WeatherData));
+		console.log(toJS(WeatherStore.WeatherData));
 		// console.log(toJS(WeatherStore.searchResults));
 
 		return (

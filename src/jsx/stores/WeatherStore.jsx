@@ -13,7 +13,7 @@ configure({
 });
 
 class WeatherStore {
-	@observable WeatherData = [];
+	@observable WeatherData = { icon: '04n' };
 
 	@observable isLoading = true;
 
@@ -113,7 +113,7 @@ class WeatherStore {
 				daily: weatherAll[2].daily
 			};
 
-			console.log(WeatherData);
+			// console.log(WeatherData);
 
 			runInAction(() => {
 				this.isLoading = false;

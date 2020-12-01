@@ -21,6 +21,10 @@
 	background-color: rgba($bg-white, 0.2);
 }
 
+.box-current {
+	align-self: center;
+}
+
 .box1 {
 	display: flex;
 	align-items: center;
@@ -39,11 +43,11 @@
 	}
 
 	& h3 {
-		@include fluid-type(50px, 70px);
+		@include fluid-type(40px, 70px);
 	}
 
 	& h4 {
-		@include fluid-type(20px, 24px);
+		@include fluid-type(18px, 24px);
 	}
 
 	&__image {
@@ -51,6 +55,11 @@
 		align-items: center;
 		font-size: 100px;
 		justify-content: flex-end;
+
+		& .icon {
+			@include fluid-type(6rem, 10rem);
+			color: $colorWhite;
+		}
 	}
 
 	@include mediaa(maxsm) {
