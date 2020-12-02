@@ -1,10 +1,8 @@
-/* eslint-disable no-unused-vars */
 import React, { useState, useRef, useCallback } from 'react';
 import { inject, observer } from 'mobx-react';
 import PropTypes from 'prop-types';
-import ReactMapGL, { NavigationControl, Marker } from 'react-map-gl';
+import ReactMapGL, { Marker } from 'react-map-gl';
 import Geocoder from 'react-map-gl-geocoder';
-import { toJS } from 'mobx';
 
 const MAPBOX_TOKEN =
 	'pk.eyJ1IjoiamFtYW43IiwiYSI6ImNqbmV0bTFrczBrZG8zcm80Y2h4ZGF1ajQifQ.8aCc8P2-eq4hqman9k0E7g';
@@ -84,7 +82,6 @@ const SearchCity = inject('WeatherStore')(
 				>
 					<Geocoder
 						mapRef={mapRef}
-						// containerRef={geocoderContainerRef}
 						onViewportChange={handleGeocoderViewportChange}
 						mapboxApiAccessToken={MAPBOX_TOKEN}
 						position="top-left"
@@ -93,10 +90,8 @@ const SearchCity = inject('WeatherStore')(
 						onResult={handleGetSearch}
 					/>
 					<Marker
-						// key={location.id}
 						latitude={Results.latitude}
 						longitude={Results.longitude}
-						// onClick={MapSection.handleMarker(location)}
 						offsetTop={-48}
 						offsetLeft={-24}
 					>

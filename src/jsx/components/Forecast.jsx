@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { inject, observer } from 'mobx-react';
@@ -8,7 +7,7 @@ import H4 from './Layout/H4';
 
 const Forecast = inject('WeatherStore')(
 	observer((props) => {
-		const { WeatherStore, temp, month, day, hour, icon } = props;
+		const { temp, month, day, hour, icon } = props;
 		const iconUrl = `https://openweathermap.org/img/w/${icon}.png`;
 
 		return (
@@ -33,8 +32,7 @@ Forecast.wrappedComponent.propTypes = {
 	month: PropTypes.string.isRequired,
 	day: PropTypes.string.isRequired,
 	hour: PropTypes.number.isRequired,
-	icon: PropTypes.string.isRequired,
-	WeatherStore: PropTypes.objectOf(PropTypes.object).isRequired
+	icon: PropTypes.string.isRequired
 };
 
 export default Forecast;

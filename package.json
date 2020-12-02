@@ -1,8 +1,8 @@
 {
-	"name": "Sample_Weather",
+	"name": "weather",
 	"version": "1.0.1",
-	"description": "devDependencies require.js: Sample_Weather",
-	"main": "gulp webpack project Sample_Weather",
+	"description": "devDependencies require.js: weather",
+	"main": "gulp webpack project weather",
 	"homepage": "",
 	"repository": {
 		"type": "git",
@@ -191,6 +191,7 @@
 		"react-map-gl": "^5.2.10",
 		"react-map-gl-geocoder": "^2.1.6",
 		"react-router-dom": "^5.2.0",
-		"react-uuid": "^1.0.2"
+		"react-uuid": "^1.0.2",
+		"react-visibility-sensor": "^5.1.1"
 	}
 }

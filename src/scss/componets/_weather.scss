@@ -182,10 +182,10 @@
 		align-self: stretch;
 		justify-content: space-between;
 		color: $colorWhite;
-		padding: 10px;
+
 		@include margin(8px 8px null null);
 		border-radius: 5px;
-		background-color: rgba($colorWhite, 0.2);
+		//background-color: rgba($colorWhite, 0.2);
 		text-align: center;
 
 		@include mediaa(minmlg) {
@@ -262,4 +262,25 @@
 
 .scroll-container {
 	display: flex;
+}
+
+// base
+.flip {
+	& .bg {
+		background-color: #4e515a;
+		width: 100%;
+		border-radius: 5px;
+		padding: 10px;
+		transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+		transition-duration: 0.5s;
+		transition-property: transform, opacity;
+	}
+
+	& .back {
+		transform: rotateY(180deg);
+	}
+
+	& .front {
+		transform: rotateY(0);
+	}
 }

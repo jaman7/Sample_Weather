@@ -1,17 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { inject, observer } from 'mobx-react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-	faCloud,
-	faBolt,
-	faCloudRain,
-	faCloudShowersHeavy,
-	faSnowflake,
-	faSun,
-	faSmog
-} from '@fortawesome/free-solid-svg-icons';
 import uuid from 'react-uuid';
+import VisibilitySensor from 'react-visibility-sensor';
 
 import Forecast from './Forecast';
 import Daily from './Daily';
@@ -32,9 +23,7 @@ const Result = inject('WeatherStore')(
 			city,
 			country,
 			date,
-			icon,
 			description,
-			main,
 			temp,
 			sunset,
 			sunrise,
@@ -106,7 +95,6 @@ const Result = inject('WeatherStore')(
 
 					<Column nameClass="col-12">
 						<Wrapper iddiv="scroll" nameClass="box3 scroll">
-							{/* <ScrollContainer className="scroll-container"> */}
 							{forecast &&
 								forecast.map((item) => (
 									<Forecast
@@ -118,7 +106,6 @@ const Result = inject('WeatherStore')(
 										hour={item.dt_txt.slice(11, 13) * 1}
 									/>
 								))}
-							{/* </ScrollContainer> */}
 						</Wrapper>
 					</Column>
 				</Row>
@@ -132,18 +119,27 @@ const Result = inject('WeatherStore')(
 						<Wrapper nameClass="box4">
 							{daily &&
 								daily.map((item) => (
-									<Daily
-										key={item.dt}
-										tempday={Math.floor(item.temp.day * 1) / 1}
-										tempMorning={Math.floor(item.temp.morn * 1) / 1}
-										tempNight={Math.floor(item.temp.night * 1) / 1}
-										icon={item.weather[0].icon}
-										description={item.weather[0].description}
-										date={dailyDate(item.dt)}
-										day={dayOfWeek(item.dt)}
-										sunset={WeatherStore.sunsetSunrise(item.sunset)}
-										sunrise={WeatherStore.sunsetSunrise(item.sunrise)}
-									/>
+									<VisibilitySensor>
+										{({ isVisible }) => {
+											return (
+												<Daily
+													key={item.dt}
+													tempday={Math.floor(item.temp.day * 1) / 1}
+													tempMorning={Math.floor(item.temp.morn * 1) / 1}
+													tempNight={Math.floor(item.temp.night * 1) / 1}
+													icon={item.weather[0].icon}
+													description={item.weather[0].description}
+													date={dailyDate(item.dt)}
+													day={dayOfWeek(item.dt)}
+													sunset={WeatherStore.sunsetSunrise(item.sunset)}
+													sunrise={WeatherStore.sunsetSunrise(
+														item.sunrise
+													)}
+													front={isVisible ? ' front' : ' back'}
+												/>
+											);
+										}}
+									</VisibilitySensor>
 								))}
 						</Wrapper>
 					</Column>
