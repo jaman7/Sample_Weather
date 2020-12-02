@@ -1,11 +1,13 @@
-# sample cryptocurrency API React
-Sample Ccryptocurrency React/Mobx app.
+# sample weather API React
+Sample_Weather React/Mobx app.
+
+Demo: https://jsdevpro.pl/weather/
 
 ## Installation:
 
 ## Use git clone.
 ```
-git clone https://github.com/jaman7/cryptocurrency.git
+git clone https://github.com/jaman7/Sample_Weather.git
 ```
 ## install
 ```
