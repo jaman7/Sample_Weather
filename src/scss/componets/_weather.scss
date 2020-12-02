@@ -1,3 +1,18 @@
+.item {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	color: $colorWhite;
+	justify-content: center;
+
+	&-column {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		justify-content: center;
+	}
+}
+
 .box-title {
 	& span,
 	& h2,
@@ -31,9 +46,13 @@
 
 	justify-content: space-around;
 
+	@include mediaa(maxsm) {
+		margin-top: 30px;
+	}
+
 	& svg {
-		color: $colorWhite;
 		display: block;
+		color: $colorWhite;
 	}
 
 	& h3,
@@ -53,25 +72,21 @@
 	&__image {
 		display: flex;
 		align-items: center;
-		font-size: 100px;
 		justify-content: flex-end;
+		font-size: 100px;
 
 		& .icon {
-			@include fluid-type(6rem, 10rem);
 			color: $colorWhite;
+			@include fluid-type(6rem, 10rem);
 		}
-	}
-
-	@include mediaa(maxsm) {
-		margin-top: 30px;
 	}
 }
 
 .box2 {
 	display: flex;
-	flex-wrap: wrap;
 	align-self: flex-start;
 	flex-basis: 100%;
+	flex-wrap: wrap;
 
 	@include mediaa(minsm) {
 		flex-basis: 50%;
@@ -82,13 +97,8 @@
 	}
 
 	& .item {
-		display: flex;
 		flex-basis: calc(33.3333%);
-		flex-direction: column;
 		padding: 10px;
-		justify-content: center;
-		align-items: center;
-		color: $colorWhite;
 	}
 
 	& h4,
@@ -100,28 +110,23 @@
 .box3 {
 	display: flex;
 	flex-basis: 100%;
-	// flex-direction: row;
 	padding-bottom: 20px;
 
 	@include mediaa(maxsm) {
-		flex-direction: initial;
 		flex-basis: initial;
+		flex-direction: initial;
 		flex-wrap: wrap;
 		justify-content: center;
 	}
 
 	& .item {
-		color: $colorWhite;
-		flex-shrink: 0;
 		flex-basis: 90px;
-		padding: 10px;
+		flex-shrink: 0;
+		flex-wrap: wrap;
 		margin: 0 5px;
+		padding: 10px;
 		border-radius: 5px;
 		background-color: rgba($colorWhite, 0.2);
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex-wrap: wrap;
 		text-align: center;
 
 		@include mediaa(minmd) {
@@ -129,20 +134,13 @@
 		}
 
 		@include mediaa(maxsm) {
-			margin-left: 0;
-			margin-right: 5px;
 			margin-top: 5px;
+			margin-right: 5px;
+			margin-left: 0;
 		}
 
 		&:first-child {
 			margin-left: 0;
-		}
-
-		&-column {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
 		}
 
 		& h4 {
@@ -167,26 +165,20 @@
 	}
 
 	@include mediaa(maxsm) {
-		flex-direction: initial;
 		flex-basis: initial;
+		flex-direction: initial;
 		flex-wrap: wrap;
 		justify-content: center;
 	}
 
 	& .item {
-		display: flex;
-		flex-direction: column;
-		//justify-content: center;
-		align-items: center;
-		flex-wrap: wrap;
 		align-self: stretch;
+		flex-wrap: wrap;
 		justify-content: space-between;
-		color: $colorWhite;
+		border-radius: 5px;
+		text-align: center;
 
 		@include margin(8px 8px null null);
-		border-radius: 5px;
-		//background-color: rgba($colorWhite, 0.2);
-		text-align: center;
 
 		@include mediaa(minmlg) {
 			flex-basis: 100%;
@@ -205,9 +197,9 @@
 
 		@include mediaa(maxsm) {
 			flex-basis: 45%;
-			margin-left: 0;
-			margin-right: 5px;
 			margin-top: 5px;
+			margin-right: 5px;
+			margin-left: 0;
 		}
 
 		@include mediaa(maxxsm) {
@@ -216,13 +208,6 @@
 
 		&:first-child {
 			margin-left: 0;
-		}
-
-		&-column {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
 		}
 
 		& h4 {
@@ -234,16 +219,16 @@
 			@include fluid-type(1.1rem, 1.3rem);
 
 			& span {
-				@include fluid-type(0.8rem, 1rem);
 				font-weight: 400;
+				@include fluid-type(0.8rem, 1rem);
 			}
 		}
 
 		.description {
-			@include fluid-type(1rem, 1.1rem);
-			font-weight: 400;
-			@include padding(15px null);
 			margin-bottom: 0;
+			font-weight: 400;
+			@include fluid-type(1rem, 1.1rem);
+			@include padding(15px null);
 		}
 
 		& h4,
@@ -267,10 +252,10 @@
 // base
 .flip {
 	& .bg {
-		background-color: #4e515a;
+		padding: 10px;
 		width: 100%;
 		border-radius: 5px;
-		padding: 10px;
+		background-color: #4e515a;
 		transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 		transition-duration: 0.5s;
 		transition-property: transform, opacity;
