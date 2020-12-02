@@ -63,10 +63,28 @@ const Daily = inject('WeatherStore')(
 );
 
 Daily.wrappedComponent.propTypes = {
+	date: PropTypes.string,
+	day: PropTypes.string,
+	sunset: PropTypes.string,
+	sunrise: PropTypes.string,
+	icon: PropTypes.string,
+	description: PropTypes.string,
+	tempday: PropTypes.number,
+	tempMorning: PropTypes.number,
+	tempNight: PropTypes.number,
 	front: PropTypes.string
 };
 
 Daily.wrappedComponent.defaultProps = {
+	date: '',
+	day: '',
+	sunset: '',
+	sunrise: '',
+	icon: '',
+	description: '',
+	tempday: null,
+	tempMorning: null,
+	tempNight: null,
 	front: ''
 };
 

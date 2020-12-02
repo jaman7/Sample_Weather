@@ -150,11 +150,37 @@ const Result = inject('WeatherStore')(
 );
 
 Result.wrappedComponent.propTypes = {
-	icon: PropTypes.string,
-	WeatherStore: PropTypes.objectOf(PropTypes.object).isRequired
+	WeatherStore: PropTypes.shape({
+		WeatherData: PropTypes.shape({
+			city: PropTypes.string,
+			country: PropTypes.string,
+			date: PropTypes.string,
+			description: PropTypes.string,
+			temp: PropTypes.number,
+			sunrise: PropTypes.string,
+			sunset: PropTypes.string,
+			humidity: PropTypes.number,
+			wind: PropTypes.number,
+			highestTemp: PropTypes.number,
+			lowestTemp: PropTypes.number,
+			forecast: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
+		})
+	}).isRequired,
+	icon: PropTypes.string
 };
 
 Result.wrappedComponent.defaultProps = {
+	city: '',
+	country: '',
+	date: '',
+	description: '',
+	temp: null,
+	sunrise: '',
+	sunset: '',
+	humidity: null,
+	wind: null,
+	highestTemp: null,
+	lowestTemp: null,
 	icon: '04n'
 };
 

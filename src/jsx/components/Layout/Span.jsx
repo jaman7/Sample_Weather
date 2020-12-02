@@ -16,8 +16,8 @@ Span.wrappedComponent.propTypes = {
 };
 
 Span.wrappedComponent.defaultProps = {
-	children: '',
-	nameClass: ''
+	nameClass: '',
+	className: ''
 };
 
 export default Span;

@@ -35,4 +35,12 @@ Forecast.wrappedComponent.propTypes = {
 	icon: PropTypes.string.isRequired
 };
 
+Forecast.wrappedComponent.defaultProps = {
+	temp: null,
+	month: '',
+	day: '',
+	hour: null,
+	icon: ''
+};
+
 export default Forecast;

@@ -12,7 +12,6 @@ const SearchCity = inject('WeatherStore')(
 		const { WeatherStore } = props;
 
 		const mapRef = useRef();
-		// const geocoderContainerRef = useRef();
 
 		const styles = {
 			width: '100%',
@@ -104,7 +103,15 @@ const SearchCity = inject('WeatherStore')(
 );
 
 SearchCity.wrappedComponent.propTypes = {
-	WeatherStore: PropTypes.oneOfType([PropTypes.object, PropTypes.array]).isRequired
+	WeatherStore: PropTypes.shape({
+		searchResults: PropTypes.shape({
+			city: PropTypes.string,
+			language: PropTypes.string,
+			place: PropTypes.string,
+			latitude: PropTypes.number,
+			longitude: PropTypes.number
+		})
+	}).isRequired
 };
 
 export default SearchCity;
